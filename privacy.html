@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildflower — Data Protection &amp; Privacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0e0b1c;
+    --indigo:#1b1733;
+    --indigo-2:#241f42;
+    --gold:#c9a15c;
+    --gold-soft:#e8d9b5;
+    --plum:#6b3e5e;
+    --plum-glow:rgba(155,90,140,.35);
+    --parchment:#ede6d8;
+    --lav:#9c93b5;
+    --hair:rgba(201,161,92,.25);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse 60% 45% at 50% 0%, var(--plum-glow), transparent 70%),
+      linear-gradient(180deg, var(--void) 0%, #120e24 55%, var(--void) 100%);
+    background-attachment:fixed;
+    color:var(--parchment);
+    font-family:'Jost',sans-serif;
+    font-weight:300;
+    line-height:1.7;
+  }
+  a{color:var(--gold-soft);text-decoration:none;border-bottom:1px solid var(--hair);}
+  a:hover{border-color:var(--gold);}
+  h1,h2,.serif{font-family:'Cormorant Garamond',serif;}
+  .eyebrow{
+    font-size:.7rem;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--gold);
+    opacity:.85;
+  }
+
+  /* ---------- constellation backdrop ---------- */
+  .stars{
+    position:fixed;inset:0;
+    width:100%;height:100%;
+    pointer-events:none;
+    z-index:0;
+  }
+  .stars line{stroke:var(--gold);stroke-width:.6;opacity:.28;}
+  .stars circle{fill:var(--gold-soft);}
+  nav, main, footer{position:relative;z-index:1;}
+
+  nav{
+    display:flex;align-items:center;justify-content:center;gap:.9rem;
+    padding:3.2rem 1.5rem 1.2rem;
+    text-align:center;
+  }
+  nav a.home-link{
+    display:flex;align-items:center;gap:.9rem;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:2rem;
+    color:var(--parchment);
+    border:none;
+  }
+  nav a.home-link img{
+    width:56px;height:56px;
+    border-radius:14px;
+    box-shadow:0 0 24px var(--plum-glow);
+  }
+  nav a.home-link:hover{color:var(--gold-soft);}
+
+  main{
+    max-width:640px;
+    margin:0 auto;
+    padding:2rem 1.5rem 6rem;
+  }
+  header.title-block{
+    text-align:center;
+    margin-bottom:3.5rem;
+  }
+  header.title-block h1{
+    font-size:42px;
+    font-style:italic;
+    font-weight:500;
+    margin:.5rem 0 .8rem;
+  }
+  header.title-block p{
+    color:var(--lav);
+    font-size:.95rem;
+    max-width:32rem;
+    margin:0 auto;
+  }
+  .divider{
+    width:1px;height:48px;
+    margin:2rem auto;
+    background:linear-gradient(var(--gold), transparent);
+    opacity:.5;
+  }
+
+  section{margin-bottom:2.6rem;}
+  section h2{
+    font-size:1.4rem;
+    font-style:italic;
+    font-weight:500;
+    color:var(--gold-soft);
+    margin:0 0 .9rem;
+    border-bottom:1px solid var(--hair);
+    padding-bottom:.6rem;
+  }
+  section p{
+    color:var(--parchment);
+    font-size:.96rem;
+    margin:0 0 .9rem;
+  }
+  section ul{
+    margin:0;
+    padding-left:1.2rem;
+    color:var(--parchment);
+    font-size:.96rem;
+  }
+  section li{margin-bottom:.5rem;}
+  .updated{
+    text-align:center;
+    color:var(--lav);
+    font-size:.82rem;
+    letter-spacing:.04em;
+    margin-top:3.5rem;
+    opacity:.75;
+  }
+
+  footer{
+    padding:4.5rem 1.5rem 3rem;
+    text-align:center;
+    border-top:1px solid var(--hair);
+  }
+  footer .flower{width:34px;height:34px;margin:0 auto 1.4rem;opacity:.8;}
+  footer .links{
+    display:flex;gap:2rem;justify-content:center;
+    font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+    margin-bottom:1.6rem;
+  }
+  footer .links a{text-decoration:none;border:none;color:var(--lav);transition:color .3s ease;}
+  footer .links a:hover{color:var(--gold-soft);}
+  footer .fine{font-size:.75rem;color:var(--lav);opacity:.6;}
+</style>
+</head>
+<body>
+
+<svg class="stars" id="starsSvg"></svg>
+
+<nav>
+  <a class="home-link" href="index.html">
+    <img src="assets/icon.svg" alt="Wildflower icon"> Wildflower
+  </a>
+</nav>
+
+<main>
+  <header class="title-block">
+    <p class="eyebrow">Data Protection</p>
+    <h1>Privacy Policy</h1>
+    <p>Wildflower brings astrology, tarot, Lenormand, guided meditation, and ASMR sleep sounds into one quiet space — a place to check in with yourself daily. Here's how your information is handled.</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2>What we collect</h2>
+    <ul>
+      <li>Birth information (date, time, place) you enter to generate astrology charts and readings</li>
+      <li>AI-generated tarot, astrology, AstroDice, and Lenormand readings created from your questions and astrology chart data</li>
+      <li>Saved meditation and ASMR preferences</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Where it's stored</h2>
+    <p>Your birth information and reading history are stored locally on your device. We do not upload or store this data on our own servers.</p>
+  </section>
+
+  <section>
+    <h2>AI-generated content (powered by Google Gemini)</h2>
+    <p>To generate your readings, your birth information and questions are sent to Google's Gemini API for processing. Per Google's Gemini API policies, this data is not used to train Google's models by default on paid API usage, but prompts and responses may be temporarily logged (currently for a limited period) solely for abuse and safety monitoring. This data is not shared with advertisers or used to build a marketing profile.</p>
+  </section>
+
+  <section>
+    <h2>What we don't do</h2>
+    <ul>
+      <li>We don't sell your personal information</li>
+      <li>We don't share your birth data or reading history with advertisers</li>
+      <li>We don't use your data to build a profile for marketing purposes</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Your control</h2>
+    <p>You can delete your profile, birth information, and reading history at any time from within the app. Uninstalling the app removes all locally stored data. Note that this does not retroactively delete any data already logged by Google's abuse-monitoring systems, which follows Google's own retention schedule.</p>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <p>Wildflower is not intended for users under 13 (or the applicable age in your region). We do not knowingly collect data from children.</p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>We'll update this policy if how we handle your data changes, and note the date of the most recent update below.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Questions about your data? Reach us at <a href="mailto:wildflower07042026@gmail.com">wildflower07042026@gmail.com</a>.</p>
+  </section>
+
+  <p class="updated">Last updated: August 9, 2026</p>
+</main>
+
+<footer>
+  <svg class="flower" viewBox="0 0 60 60" fill="none">
+    <g stroke="var(--gold)" stroke-width="1" id="footerFlower"></g>
+  </svg>
+  <div class="links">
+    <a href="index.html">Back to Wildflower</a>
+    <a href="mailto:wildflower07042026@gmail.com">Contact</a>
+  </div>
+  <p class="fine">Wildflower · for reflection and entertainment</p>
+</footer>
+
+<script>
+  // footer flower glyph, matching the home page
+  (function(){
+    const g = document.getElementById('footerFlower');
+    const cx=30, cy=30, r=16;
+    let html='';
+    for(let i=0;i<6;i++){
+      const a=(Math.PI/3)*i - Math.PI/2;
+      const x=cx+Math.cos(a)*r, y=cy+Math.sin(a)*r;
+      html += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" opacity="0.6"/>`;
+      html += `<circle cx="${x}" cy="${y}" r="1.6" fill="var(--gold)" stroke="none"/>`;
+    }
+    g.innerHTML = html;
+  })();
+
+  // scattered constellation background, matching the home page hero
+  (function(){
+    const svg = document.getElementById('starsSvg');
+    const w = window.innerWidth, h = window.innerHeight;
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    const n = Math.min(34, Math.floor(w/45));
+    const pts = [];
+    for(let i=0;i<n;i++){
+      pts.push({x: Math.random()*w, y: Math.random()*h});
+    }
+    let html = '';
+    pts.forEach((p,i)=>{
+      // connect to nearest 1-2 neighbors for a constellation feel
+      const dists = pts.map((q,j)=>({j, d: j===i?Infinity:Math.hypot(p.x-q.x,p.y-q.y)}))
+                        .sort((a,b)=>a.d-b.d).slice(0,2);
+      dists.forEach(d=>{
+        if(d.d < w*0.18){
+          const q = pts[d.j];
+          html += `<line x1="${p.x}" y1="${p.y}" x2="${q.x}" y2="${q.y}"/>`;
+        }
+      });
+      const r = 0.8 + Math.random()*1.4;
+      html += `<circle cx="${p.x}" cy="${p.y}" r="${r}" opacity="${0.35+Math.random()*0.5}"/>`;
+    });
+    svg.innerHTML = html;
+  })();
+</script>
+
+</body>
+</html>
